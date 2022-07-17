@@ -20,3 +20,18 @@ dependencies {
 tasks.named('test') {
     useJUnitPlatform()
 }
+
+subprojects {
+    apply plugin: 'java-library'
+}
+
+/*
+api 키워드를 사용하기 위해선 2가지 중 1가지 방법으로 선언을 해야 한다.
+=> common에 api 키워드가 있음
+
+1. api를 사용하려는 build.gradle의 plugins에 `id 'java-library'` 추가
+2. 상위 모듈(=root)에서 'java-library' 추가
+예) subprojects {
+        apply plugin: 'java-library'
+    }
+ */
